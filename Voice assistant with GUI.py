@@ -50,7 +50,7 @@ def speak(audio):
 
 
 #for calculation
-app = wolframalpha.Client("UHLRPR-T85W5GRV6T")
+app = wolframalpha.Client("wolframe app id")
 
 
 #To wish
@@ -69,7 +69,7 @@ def wish():
 
 #for news update
 def news():
-    main_url= 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3ae4390e85474194bcd4255e144ffa1c'
+    main_url= 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=your news api key'
 
     main_page = requests.get(main_url).json()
     articles = main_page["articles"]
