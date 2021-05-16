@@ -91,10 +91,10 @@ def Randommusic():
     
 #to send email
 def sendEmail(to,content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP('smtp.gmail.com',)
     server.ehlo()
     server.login()
-    server.sendmail('prajwalbhagwat2001@gmail.com', to, content)
+    server.sendmail('Email address', to, content)
     server.close()
 
 def search_wikihow(query, max_results=10, lang="en"):
@@ -223,11 +223,11 @@ class MainThread(QThread):
                 speak("opening facebook..")
 
             elif "open maps" in  self.query or "show my location" in  self.query:
-                webbrowser.open("https://www.google.co.in/maps/@19.2855223,72.876081,16z?hl=en") 
+                webbrowser.open("your location ip address") 
                 speak("opening maps")   
 
             elif "send message" in   self.query:
-                pywhatkit.sendwhatmsg("+918928239769", "this is testing protocol",16,44)
+                pywhatkit.sendwhatmsg("YOUR number ", "this is testing protocol",16,44)
 
             elif "who made you" in self.query or "who created you" in self.query:
                 speak("I have been created by Prajwal.")
@@ -238,7 +238,7 @@ class MainThread(QThread):
                 try:
                     speak("what should i say?")
                     content = self.takecommand().lower()
-                    to = "prajwalbhagwat2001@gmail.com"
+                    to = "email address"
                     sendEmail(to,content)
                     speak("Email has been sent to prajwal")
 
@@ -387,30 +387,30 @@ class MainThread(QThread):
              speak("what should i send sir")
              msz = self.takecommand()
 
-             account_sid = 'AC00d737b253a207ff8e8f936a1ef3d1c5'
-             auth_token = 'a7fab5ab25e0b846ee1084d1f070c8b4'
+             account_sid = ' Make account on Twilio and paste your account_sid '
+             auth_token = ' Make account on Twilio and paste your auth_token'
              client = Client(account_sid, auth_token)
 
              message = client.messages \
                     .create(
                     body=msz,
-                    from_='+19292654987',
-                    to='+918928239769'
+                    from_='your twilio number',
+                    to='victim number'
                     )
              speak("Message has been sent sir, waiting for your next command")
 
             elif"make a phone call"in self.query:
             
 
-             account_sid = 'AC00d737b253a207ff8e8f936a1ef3d1c5'
-             auth_token = 'a7fab5ab25e0b846ee1084d1f070c8b4'
+             account_sid = ' Make account on Twilio and paste your account_sid '
+             auth_token =  'Make account on Twilio and paste your auth_token'
              client = Client(account_sid, auth_token)
 
              message = client.calls \
                 .create(
                 twiml='<Response><Say>This is the testing message from Jarvis side..</Say></Response>',
-                from_='+19292654987',
-                to='+918928239769'
+                from_='your twilio number',
+                to='victim number'
                 )   
              speak("Phone call has been made sir, waiting for your next command")
             
